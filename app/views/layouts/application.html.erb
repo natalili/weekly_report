@@ -3,10 +3,24 @@
   <head>
     <title><%= title %></title>
     <%= csrf_meta_tag %>
-    <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen'%>
-    <%= stylesheet_link_tag 'blueprint/print', :media => 'print'%>
+    <%= render 'layouts/stylesheets' %>
   </head>
   <body>
-    <%= yield %>
+      <header>
+        <h1>Еженедельный отчет</h1>
+      </header>
+      <nav>
+          <ul>
+            <li><%= link_to "Home", '#' %></li>
+            <li><%= link_to "Help", '#' %></li>
+          </ul>
+      </nav>
+      <section class="container">
+        <%= yield %>
+      </section>
+    <footer>
+      <h6>Днепрпетровск</h6>
+      <h6>2012г.</h6> 
+    </footer>
   </body>
 </html>
